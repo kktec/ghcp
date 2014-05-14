@@ -106,11 +106,22 @@ environments {
 log4j = {
     // Example of changing the log pattern for the default console appender:
     //
+	def logPattern = pattern(conversionPattern: '%d{ISO8601} %p %t %c %m%n')
+	
     appenders {
-        console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
+        console name:'stdout', layout: logPattern
+		rollingFile name: 'rolling', layout: logPattern, maxBackupIndex: 10, maxFileSize: 1024*1024*1024, file: "logs/ghcp.log"
     }
 	
-	info	'org.kktec'
+	root {
+		info 'stdout'
+		warn 'rolling'
+	}
+	
+//	trace 'org.hibernate.type'
+//	debug 'org.hibernate.SQL'
+	
+	info   'grails.app'
 	
 	warn   'org.springframework',
            'org.hibernate',
