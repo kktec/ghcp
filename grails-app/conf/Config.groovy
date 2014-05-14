@@ -11,7 +11,7 @@
 //    grails.config.locations << "file:" + System.properties["${appName}.config.location"]
 // }
 
-grails.project.groupId = appName // change this to alter the default package name and Maven publishing destination
+grails.project.groupId = "org.kktec.$appName" // change this to alter the default package name and Maven publishing destination
 
 // The ACCEPT header will not be used for content negotiation for user agents containing the following strings (defaults to the 4 major rendering engines)
 grails.mime.disable.accept.header.userAgents = ['Gecko', 'WebKit', 'Presto', 'Trident']
@@ -43,7 +43,10 @@ grails.views.default.codec = "html"
 
 // The default scope for controllers. May be prototype, session or singleton.
 // If unspecified, controllers are prototype scoped.
-grails.controllers.defaultScope = 'singleton'
+
+//grails.controllers.defaultScope = 'singleton'
+
+
 
 // GSP settings
 grails {
@@ -103,9 +106,15 @@ environments {
 log4j = {
     // Example of changing the log pattern for the default console appender:
     //
-    //appenders {
-    //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
-    //}
+    appenders {
+        console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
+    }
+	
+	info	'org.kktec'
+	
+	warn   'org.springframework',
+           'org.hibernate',
+           'net.sf.ehcache.hibernate'
 
     error  'org.codehaus.groovy.grails.web.servlet',        // controllers
            'org.codehaus.groovy.grails.web.pages',          // GSP
@@ -114,8 +123,5 @@ log4j = {
            'org.codehaus.groovy.grails.web.mapping',        // URL mapping
            'org.codehaus.groovy.grails.commons',            // core / classloading
            'org.codehaus.groovy.grails.plugins',            // plugins
-           'org.codehaus.groovy.grails.orm.hibernate',      // hibernate integration
-           'org.springframework',
-           'org.hibernate',
-           'net.sf.ehcache.hibernate'
+           'org.codehaus.groovy.grails.orm.hibernate'      // hibernate integration
 }

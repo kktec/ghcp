@@ -77,6 +77,10 @@ grails.project.dependency.resolution = {
         //compile ":coffee-asset-pipeline:1.5.0"
         //compile ":handlebars-asset-pipeline:1.3.0.1"
 		
+		
+		
 		compile ":joda-time:1.4"
+		compile ":console:1.3"
+		compile ":console-enhancements:1.0"
     }
 }
