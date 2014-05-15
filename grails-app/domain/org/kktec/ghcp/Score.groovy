@@ -1,12 +1,15 @@
 package org.kktec.ghcp
 
+import groovy.transform.ToString
+
 import java.math.RoundingMode
 
 import org.joda.time.LocalDate
 
+@ToString
 class Score {
 	
-	static Integer DEFAULT_SLOPE = 113
+	static final Integer DEFAULT_SLOPE = 113
 	
 	Integer strokes
 	

@@ -82,5 +82,9 @@ grails.project.dependency.resolution = {
 		compile ":joda-time:1.4"
 		compile ":console:1.3"
 		compile ":console-enhancements:1.0"
+		compile ":codenarc:0.21"
     }
+
 }
+
+codenarc.ruleSetFiles = 'file:grails-app/conf/CodenarcRules.groovy'
