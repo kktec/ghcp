@@ -1,5 +1,6 @@
 /*
 *= require main
 *= require mobile
+*= require_tree ui-lightness
 *= require_self
 */
