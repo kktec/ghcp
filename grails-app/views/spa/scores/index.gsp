@@ -8,7 +8,7 @@
         <div><h1>Handicap Index: ${handicap}</h1></div>
         <div>
           <h1>Scores:</h1>
-          <table>
+          <table id="table">
               <thead>
                   <tr>
                       <th>Strokes</th>
