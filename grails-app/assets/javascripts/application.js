@@ -1,5 +1,4 @@
-//= require jquery
-//= require_tree .
+//= require jquery-1.11.1
 //= require_self
 
 if (typeof jQuery !== 'undefined') {
