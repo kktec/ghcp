@@ -8,7 +8,7 @@
         <asset:javascript src="scores_js.js"/>
     </head>
     <body>
-        <div><h1>Handicap Index: ${handicap}</h1></div>
+        <div><h1>Handicap Index: <span id="handicap">${handicap}</span></h1></div>
         <div>
           <h1>Scores:</h1>
           <table id="table"><g:render template="scores/head" /></table>

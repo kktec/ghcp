@@ -19,4 +19,10 @@ $(document).ready(function() {
               { "data": "differential" }
             ]
         });
+        
+//        event.preventDefault();
+//       var h = 
+    	   $.getJSON("handicap", function(data) {
+    	   	  $("#handicap").html(data.handicap);
+       });
 });

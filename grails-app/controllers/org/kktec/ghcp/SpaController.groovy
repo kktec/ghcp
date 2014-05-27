@@ -5,7 +5,7 @@ import grails.converters.JSON
 class SpaController {
 	
     def index() { 
-		render view: 'scores/plain', model: [scores: Score.list(), handicap: 'N/A']
+		render view: 'scores/plain', model: [scores: Score.list(), handicap: 'n/a']
 	}
 	
 	def scores_js() {
@@ -13,7 +13,8 @@ class SpaController {
 	}
 	
 	def handicap() {
-		render ([handicap: 'n/a']) as JSON
+		Map hcp = [handicap: 'n/a']
+		render hcp as JSON
 	}
 	
 }
