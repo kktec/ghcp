@@ -1,7 +1,7 @@
 class UrlMappings {
 
 	static mappings = {
-		"/scores"(controller: 'spa', action: 'scores')
+		"/scores/$action?/$id?(.$format)?"(controller: 'spa')
 		"/api/scores"(resources: 'score')
 		
         "/"(view: "/index")
