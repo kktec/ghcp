@@ -15,7 +15,7 @@
         <div id="dt"><g:render template="scores" /></div>
         <div class="nav">
             <ul>
-                <li><g:link controller="simpleScore" action="create" >Add Score</g:link></li>
+                <li><g:link controller="score" action="create" >Add Score</g:link></li>
             </ul>
         </div>
     </body>

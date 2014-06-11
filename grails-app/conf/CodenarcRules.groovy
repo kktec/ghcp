@@ -159,7 +159,7 @@ ruleset {
 		BracesForTryCatchFinally
 //		ClassJavadoc
 		ClosureStatementOnOpeningLineOfMultipleLineClosure
-		ConsecutiveBlankLines
+//		ConsecutiveBlankLines
 		FileEndsWithoutNewline
 		LineLength
 		MissingBlankLineAfterImports
@@ -198,7 +198,7 @@ ruleset {
 		GrailsDomainWithServiceReference
 		GrailsDuplicateConstraint
 		GrailsDuplicateMapping
-		GrailsMassAssignment
+//		GrailsMassAssignment
 		GrailsPublicControllerMethod
 		GrailsServletContextReference
 		GrailsSessionReference   // DEPRECATED
@@ -243,7 +243,7 @@ ruleset {
 		ImportFromSamePackage
 		ImportFromSunPackages
 		MisorderedStaticImports
-		NoWildcardImports
+//		NoWildcardImports
 		UnnecessaryGroovyImport
 		UnusedImport
 		
@@ -294,7 +294,7 @@ ruleset {
 		ClassName
 		ClassNameSameAsFilename
 		ConfusingMethodName
-		FactoryMethodName
+		FactoryMethodName(regex: /(build.*)/)
 		FieldName
 		InterfaceName
 		MethodName(regex: /[a-zA-Z#][#\w\s'\(\)]*/)
@@ -376,7 +376,7 @@ ruleset {
 		UnnecessarySubstring
 		UnnecessaryTernaryExpression
 		UnnecessaryToString
-		UnnecessaryTransientModifier
+//		UnnecessaryTransientModifier
 		
 		// rulesets/unused.xml
 		UnusedArray

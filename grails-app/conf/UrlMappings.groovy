@@ -1,8 +1,8 @@
 class UrlMappings {
 
 	static mappings = {
-		"/scores/$action?/$id?"(controller: 'simpleScore')
-		"/api/scores"(resources: 'score')
+		"/scores/$action?/$id?"(controller: 'score')
+//		"/api/scores"(resources: 'score')
 		
         "/"(view: "/index")
         "500"(view: '/error')

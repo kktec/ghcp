@@ -4,7 +4,7 @@ import java.math.RoundingMode
 
 class ScoreService {
 	
-	final String LIST_QUERY = 'from Score as s order by s.playedOn desc, s.id desc'
+	static final String LIST_QUERY = 'from Score as s order by s.playedOn desc, s.id desc'
 	
 	Score score(Long id) {
 		Score.get id
