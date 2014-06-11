@@ -41,8 +41,8 @@ body {
 	color: #333333;
 	margin: 0 auto;
 	
-    min-width: 98%;
-    max-width: 98%;
+    min-width: 100%;
+    max-width: 100%;
     /* max-width: 960px; */
     
     overflow-y: auto;
@@ -52,8 +52,14 @@ body {
 	        box-shadow: 0 0 0.3em #255b17;
 }
 
+
+
 #grailsLogo {
 	background-color: #abbf78;
+}
+
+#dt {
+  margin-top: 0.5em;
 }
 
 /* replace with .no-boxshadow body if you have modernizr available */
@@ -81,11 +87,15 @@ h1 {
 	color: #48802c;
 	font-weight: normal;
 	font-size: 1.25em;
-	margin: 0.8em 0 0.3em 0;
+    margin: 0.8em 0em 0.3em;
 }
 
 ul {
 	padding: 0;
+}
+
+label {
+    font-weight: bold; 
 }
 
 img {
@@ -100,11 +110,12 @@ img {
 }
 
 .content {
+    padding: 0.5em;
 }
 
 .content h1 {
 	border-bottom: 1px solid #CCCCCC;
-	margin: 0.8em 1em 0.3em;
+	margin: 0.8em 0em 0.3em;
 	padding: 0 0.25em;
 }
 
@@ -404,7 +415,8 @@ input:invalid:focus, select:invalid:focus, textarea:invalid:focus {
 /* TABLES */
 
 table {
-	border-top: 1px solid #DFDFDF;
+	
+    border-top: 1px solid #DFDFDF;
 	border-collapse: collapse;
 	width: 100%;
 	margin-bottom: 1em;

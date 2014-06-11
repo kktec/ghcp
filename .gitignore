@@ -8,3 +8,6 @@ target/
 logs/
 
 *.md.html
+*.db
+*.log
+

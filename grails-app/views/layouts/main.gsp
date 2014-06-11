@@ -19,7 +19,7 @@
 	<body>
 		<div id="grailsLogo" role="banner"><a href="http://grails.org"><asset:image src ='grails_logo.png' alt="Grails"/></a></div>
         <div class="nav"><g:render  template="/common/nav" /></div>
-		<g:layoutBody/>
+		<div class="content"><g:layoutBody/></div>
 		<div class="footer" role="contentinfo"></div>
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
 	</body>

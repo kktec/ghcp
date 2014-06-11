@@ -19,14 +19,17 @@ class Score {
 	
 	LocalDate playedOn = new LocalDate()
 	
+	transient boolean used
+	
 	BigDecimal getDifferential() {
-		BigDecimal differential = (strokes - rating) * slope / DEFAULT_SLOPE
+		BigDecimal differential = (strokes - rating) * DEFAULT_SLOPE / slope
 		differential.setScale 1, RoundingMode.HALF_DOWN
 	}
 
     static constraints = {
 		strokes(min: 54, max: 199)
-		rating(min: 60.0, max: 89.9)
-		slope(min: 55, max: 175)
+		rating(scale: 1, min: 60.0, max: 89.9)
+		slope(min: 55, max: 199)
+		playedOn(max: new LocalDate())
     }
 }
