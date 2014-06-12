@@ -4,6 +4,8 @@ class ScoreController {
 	
 	static allowedMethods = [save: 'POST', update: 'POST', delete: 'POST']
 	
+	static final String SCORE_NOT_FOUND = 'The score could not be found'
+	
 	def scoreService
 	
     def index() {
@@ -30,6 +32,9 @@ class ScoreController {
 		if (score) {
 			scoreService.delete(score)
 			flash.message = "Deleted score: $score.strokes played on $score.playedOn"
+		} 
+		else {
+			flash.message = SCORE_NOT_FOUND
 		}
 		redirect action: 'index'
 	}
@@ -41,14 +46,14 @@ class ScoreController {
 			return
 		}
 		
-		flash.message = 'The score could not be found'
+		flash.message = SCORE_NOT_FOUND
 		index()
 	}
 	
 	def update(Long id) {
 		Score score = scoreService.score id
 		if (!score) {
-			flash.message = 'The score could not be found'
+			flash.message = SCORE_NOT_FOUND
 			index()
 			return
 		}

@@ -4,6 +4,7 @@ import grails.test.mixin.TestFor
 
 import org.joda.time.LocalDate
 
+import spock.lang.Shared
 import spock.lang.Specification
 import spock.lang.Unroll
 
@@ -11,6 +12,9 @@ import spock.lang.Unroll
 class ScoreSpec extends Specification {
 	
 	Score score = new Score()
+	
+	@Shared
+	LocalDate today = new LocalDate()
 	
 	def setup() { mockForConstraintsTests(Score) }
 	
@@ -73,11 +77,32 @@ class ScoreSpec extends Specification {
 		54    || 'min'
 		55    || null
 		113   || null
-		175   || null
-		176   || 'max'
+		199   || null
+		200   || 'max'
     }
 	
-	def 'slope has a default value of 113'() { expect: new Score().slope == 113 }
+	@Unroll
+    def 'validation for playedOn value #playedOn yields error code #error'() {
+		given:
+		score.playedOn = playedOn
+		
+		when:
+		score.validate()
+		
+		then:
+		score.errors.playedOn == error
+		
+		where:
+		playedOn           || error
+		null               || 'nullable'
+		today              || null
+		today.minusDays(9) || null
+		today.plusDays(1)  || 'max'
+    }
+	
+	def 'slope has a default value of 113'() { 
+		expect: new Score().slope == 113
+	}
 	
 	@Unroll
 	def 'can calculate a handicap differential of #differential with strokes #strokes rating #rating slope #slope  '() {
@@ -92,13 +117,13 @@ class ScoreSpec extends Specification {
 		72      | 72.0   | 101     || 0.0
 		72      | 72.0   | 113     || 0.0
 		72      | 72.0   | 144     || 0.0
-		72      | 69.0   | 101     || 2.7
+		72      | 69.0   | 101     || 3.4
 		72      | 69.0   | 113     || 3.0
-		72      | 69.0   | 144     || 3.8
-		72      | 75.0   | 101     || -2.7
+		72      | 69.0   | 144     || 2.4
+		72      | 75.0   | 101     || -3.4
 		72      | 75.0   | 113     || -3.0
-		72      | 75.0   | 144     || -3.8
-		84		| 71.5	 | 113.452 || 12.5
+		72      | 75.0   | 144     || -2.4
+		84		| 71.5	 | 113     || 12.5
 	}
 	
 	def 'playedOn is required'() {

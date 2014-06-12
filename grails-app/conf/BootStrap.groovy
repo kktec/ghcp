@@ -6,7 +6,7 @@ import org.kktec.ghcp.Score
 class BootStrap {
 
     def init = { servletContext ->
-		if (Environment.current == Environment.DEVELOPMENT) {
+		if (Environment.current == Environment.DEVELOPMENT || Environment.current == Environment.TEST) {
 			new Score(playedOn: new LocalDate(2014, 5, 12), strokes: 83, rating: 70.2, slope: 117).save()
 			new Score(playedOn: new LocalDate(2014, 5, 13), strokes: 83, rating: 70.2, slope: 117).save()
 			new Score(playedOn: new LocalDate(2014, 5, 13), strokes: 88, rating: 70.2, slope: 117).save()
