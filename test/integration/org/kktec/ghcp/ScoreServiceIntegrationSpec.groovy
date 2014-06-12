@@ -13,11 +13,13 @@ class ScoreServiceIntegrationSpec extends IntegrationSpec {
 		Map handicapRecord = scoreService.handicapRecord()
 		
 		then:
-		handicapRecord.scores.size() == 20
-		handicapRecord.handicap == 8.2
-		handicapRecord.scores[18].playedOn > handicapRecord.scores[19].playedOn
-		handicapRecord.scores[17].playedOn == handicapRecord.scores[18].playedOn
-		handicapRecord.scores[18].id > handicapRecord.scores[19].id
+		with(handicapRecord) {
+			scores.size() == 20
+			handicap == 8.2
+			scores[18].playedOn > scores[19].playedOn
+			scores[17].playedOn == scores[18].playedOn
+			scores[18].id > scores[19].id
+		}
 	}
 	
 	def 'can fetch and delete a Score'() {
