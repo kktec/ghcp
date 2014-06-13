@@ -8,6 +8,10 @@ class ScoreController {
 	
 	def scoreService
 	
+	def ko() {
+		render view: 'ko'
+	}
+	
     def index() {
 		render view: 'list', model: [handicapRecord: scoreService.handicapRecord()]
 	}

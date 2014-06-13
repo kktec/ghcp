@@ -25,6 +25,10 @@ class Score {
 		BigDecimal differential = (strokes - rating) * DEFAULT_SLOPE / slope
 		differential.setScale 1, RoundingMode.HALF_DOWN
 	}
+	
+	Map toMap() {
+		[id: id, strokes: strokes, rating: rating, slope: slope, differential: differential, used: used]
+	}
 
     static constraints = {
 		strokes(min: 54, max: 199)

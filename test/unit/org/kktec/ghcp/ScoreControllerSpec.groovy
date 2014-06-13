@@ -21,7 +21,7 @@ class ScoreControllerSpec extends Specification {
 	
 	static final PLAYED_ON = new LocalDate() 
 	
-	static final SCORE = new Score(id: ID, strokes: STROKES, playedOn: PLAYED_ON)
+	static final SCORE = new Score(id: ID, strokes: STROKES, rating: RATING, slope: SLOPE, playedOn: PLAYED_ON)
 	
 	List scores = [SCORE]
 	
@@ -29,6 +29,14 @@ class ScoreControllerSpec extends Specification {
 
 	def setup() {
 		controller.scoreService = scoreService
+	}
+	
+	def 'can render the knockout spa'() {
+		when:
+		controller.ko()
+		
+		then:
+		view == '/score/ko'
 	}
 	
 	def 'can render the handicap record'() {
