@@ -19,5 +19,4 @@
         </tr>
         </g:each>
     </tbody>
-<%--    <tfoot><g:render template="head" /></tfoot>--%>
 </table>

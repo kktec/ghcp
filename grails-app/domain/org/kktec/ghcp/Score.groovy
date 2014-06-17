@@ -27,7 +27,7 @@ class Score {
 	}
 	
 	Map toMap() {
-		[id: id, strokes: strokes, rating: rating, slope: slope, differential: differential, used: used]
+		[id: id, strokes: strokes, rating: rating, slope: slope, playedOn: playedOn, differential: differential, used: used]
 	}
 
     static constraints = {
