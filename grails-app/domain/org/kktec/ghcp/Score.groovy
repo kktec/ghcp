@@ -27,13 +27,24 @@ class Score {
 	}
 	
 	Map toMap() {
-		[id: id, strokes: strokes, rating: rating, slope: slope, playedOn: playedOn, differential: differential, used: used]
+		[
+			id: id,
+			strokes: strokes,
+			rating: rating,
+			slope: slope,
+			playedOn: playedOn.toString(),
+			differential: differential,
+			used: used,
+		]
 	}
 
     static constraints = {
 		strokes(min: 54, max: 199)
 		rating(scale: 1, min: 60.0, max: 89.9)
 		slope(min: 55, max: 199)
-		playedOn(max: new LocalDate())
+		playedOn(validator: { value, score -> 
+			LocalDate today = new LocalDate()
+			if (value > today) { return 'max' }
+		})
     }
 }
