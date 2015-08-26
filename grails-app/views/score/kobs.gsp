@@ -3,12 +3,21 @@
     <head>    
         <title>KO - Golf Handicap Tracker</title>
         <meta name="layout" content="main">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <asset:javascript src="knockout-3.1.0.debug.js"/>
 <%--        <asset:javascript src="knockout.mapping-2.4.1.latest.debug.js"/>--%>
         <asset:javascript src="jqp/jquery-ui-1.10.4.custom.js"/>
         <asset:stylesheet href="ui-lightness/jquery-ui-1.10.4.custom.css"/>
     </head>
-    <body>
+    <body class="panel panel-default">
+    <div class="panel-body">
         <div id="handicapRecordView" data-bind="visible: !editing()">
           <p><button data-bind="click: add">Add Score</button></p>
           <h1>Handicap Index: <span data-bind="text: handicap"></span></h1>
@@ -17,28 +26,28 @@
           <table id="table">
               <thead>
                   <tr>
-                      <th>Id</th>
-                      <th>Strokes</th>
-                      <th>Rating</th>
-                      <th>Slope</th>
-                      <th>Played On</th>
-                      <th>Differential</th>
-                      <th>Used</th>
-                      <th></th>
-                      <th></th>
+                      <th class="center">Id</th>
+                      <th class="center">Strokes</th>
+                      <th class="center">Rating</th>
+                      <th class="center">Slope</th>
+                      <th class="center">Played On</th>
+                      <th class="center">Differential</th>
+                      <th class="center">Used</th>
+                      <th colspan="3" class="center">Actions</th>
                   </tr>
               </thead>
               <tbody data-bind="foreach: scores">
                 <tr>
-                   <td data-bind="text: id"></td>    
-                   <td data-bind="text: strokes"></td>    
-                   <td data-bind="text: rating"></td>    
-                   <td data-bind="text: slope"></td>    
-                   <td data-bind="text: playedOn"></td>    
-                   <td data-bind="text: differential"></td>    
-                   <td data-bind="text: used ? '*' : ''"></td> 
-                   <td><button data-bind="click: $parent.edit">Change</button></td>   
-                   <td><button data-bind="click: $parent.delete">Delete</button></td>   
+                   <td data-bind="text: id" class="right"></td>    
+                   <td data-bind="text: strokes" class="right"></td>    
+                   <td data-bind="text: rating" class="right"></td>    
+                   <td data-bind="text: slope" class="right"></td>    
+                   <td data-bind="text: playedOn" class="right"></td>    
+                   <td data-bind="text: differential" class="right"></td>    
+                   <td class="center"><span data-bind="visible: used" class="glyphicon glyphicon-ok"></span></td>
+                   <td class="center"><label></label><label></label></td> 
+                   <td class="center"><span data-bind="click: $parent.edit" class="glyphicon glyphicon-pencil"></span></td>   
+                   <td class="center"><span data-bind="click: $parent.delete" class="glyphicon glyphicon-ban-circle"></span></td>   
                 </tr>    
               </tbody>
           </table>
@@ -80,6 +89,7 @@
             <h1>Debug:</h1>
             <p data-bind="text: ko.toJSON($data)"></p>
         </div>
+    </div>
         <asset:javascript src="ko_scores.js"/>
     </body>
 </html>

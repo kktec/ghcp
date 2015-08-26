@@ -9,11 +9,15 @@ class ScoreController {
 	def scoreService
 	
 	def ko() {
-		render view: 'ko'
+		render view: 'ko', model: [view: 'ko']
+	}
+	
+	def kobs() {
+		render view: 'kobs', model: [view: 'kobs']
 	}
 	
     def index() {
-		render view: 'list', model: [handicapRecord: scoreService.handicapRecord()]
+		render view: 'list', model: [view: 'plain', handicapRecord: scoreService.handicapRecord()]
 	}
 	
 	def create() {

@@ -183,6 +183,15 @@ img {
 	        border-radius: 0.3em;
 }
 
+.nav strong {
+  display: block;
+  padding: 0.25em 0.7em;
+   border: 1px solid #000;
+   -moz-border-radius: 0.3em;
+   -webkit-border-radius: 0.3em;
+   border-radius: 0.3em;
+}
+
 .nav a:active, .nav a:visited {
 	color: #666666;
 }
@@ -482,6 +491,18 @@ th.asc a {
 
 th.desc a {
 	background-image: url(../images/skin/sorted_desc.gif);
+}
+
+td.center {
+  text-align: center
+}
+
+td.right {
+  text-align: right
+}
+
+th.center {
+  text-align: center
 }
 
 .odd {
